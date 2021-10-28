@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,user-scalable=no"/>
+	<title>Wearable UI</title>
+	<link rel="stylesheet"  href="lib/tau/themes/default/tau.min.css">
+	<!-- load theme file for your application -->
+	<link rel="stylesheet"  href="css/style.css">
+</head>
+<body>
+<div class="ui-page ui-page-active" id="main">
+	<div class="ui-content">
+		<div class="main-top">
+			<div class="main-step">
+			    <img src="image/top_2_main.png" alt="refuse" id="main_step_dot" />
+			</div>
+			<div class="main-me-point">
+				<div class="main-me-point-p2">
+					<p id="myPoint" >Empty</p>
+				</div>
+				<div class="main-me-point-p">
+					<img src="image/point.png" alt="refuse" id="me_icon_point" align="middle" style="margin-top: 50px"/>
+				</div>
+			</div>
+			<div class="main-you-point">
+				<div class="main-you-point-p2">
+					<p id="youPoint">Empty</p>
+				</div>
+				<div class="main-you-point-p">
+					<img src="image/point.png" alt="refuse" id="you_icon_point" align="middle" style="margin-top: 50px" />
+				</div>
+			</div>
+		</div>
+		<div class="main-middle">
+			<div class="main-me-info" id="main-me-info">
+				<img src="image/pic_nopicture.png" alt="disconnection" id="me_picture" />
+				<img src="image/me_back_up.png" alt="refuse" id="me_picture_back" />
+				<img src="image/me_back_down.png" alt="refuse" id="me_back_down" />
+				<img src="image/korea.gif" alt="refuse" id="me_nation" />
+				<div id="me_txt">
+					<p id="real_me_name" align="center">Empty</p>
+				</div>
+			</div>
+			<div class="main-vs">
+				<img src="image/vs.png" alt="refuse" id="pvs" />
+			</div>
+			<div class="main-you-info" id="main-you-info">
+				<img src="image/pic_nopicture.png" alt="refuse" id="cp_picture_back" />
+				<img src="image/cp_back_up.png" alt="refuse" id="cp_picture_nomatch" />
+				<img src="image/cp_back_down.png" alt="refuse" id="cp_startbutton" onclick="match()" />
+				<img src="image/cp_button_start.png" alt="refuse" id="cp_start" onclick="match()" />
+			</div>
+			<div class="main-you-info-r" id="main-you-info-r">
+				<img src="image/pic_nopicture.png" alt="disconnection" id="cp_picture" />
+				<img src="image/cp_back_up.png" alt="refuse" id="cp_picture_nomatch" />
+				<img src="image/cp_back_down.png" alt="refuse" id="cp_startbutton"/>
+				<img src="image/cp_button_tease.png" alt="refuse" id="tease_icon" onclick="teasePage()" />
+				<img src="image/korea.gif" alt="refuse" id="you_nation" />
+				<div id="you_txt">
+					<p id="real_cp_name" align="center">Empty</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="ui-page" id="teasePage">
+ 	<img src="image/top_1_me.png" alt="refuse" id="tease_step_dot" />
+	<img src="image/but_left.png" alt="refuse" id="button_left" onclick="changeLeftTease()" />
+	<img src="image/imtcon1.png" id="imtcon" alt="refuse"/>
+	<img src="image/but_right.png" alt="refuse" id="button_right" onclick="changeRightTease()" />
+	<img src="image/up_button_cancel.png" alt="refuse" id="feed_but_x" onclick="backHistory()" />
+	<img src="image/tbutton_down.png" alt="refuse" id="down_tease_text" onclick="sendTease()" />
+</div>
+<div class="ui-page" id="mePage">
+	<div class="mep-step">
+		<img src="image/top_1_me.png" alt="refuse" id="me_step_dot" />
+	</div>
+	<div class="me_today">
+		<img src="image/txt_today.png" alt="refuse" id="me_today_icon" />
+	</div>
+	<div class="me_kal">
+		<div class="me_kal_val">
+			<p id="me_text_kal">0</p>
+		</div>
+		<div class="me_kal_img">
+			<img src="image/today_total_04.png" alt="refuse" id="me_today_total_4" />
+		</div>
+	</div>
+	<div class="me_center">
+		<img src="image/today_total_03.png" alt="refuse" id="me_today_total_3" />
+	</div>
+	<div class="me_bottom">
+			<div class="me_mespeed" id="me_mespeed">
+			<img src="image/today_total_07.png" alt="refuse" id="today_total_07" />
+				<p id="me_text_speed">0</p>
+				<img src="image/today_total_08.png" alt="refuse" id="today_total_08" />
+			</div>
+			<div class="me_bottom_center">
+				<img src="image/today_total_02.png" alt="refuse" id="today_total_02" />
+			</div>
+			<div class="me_dis" id="me_dis">
+			<img src="image/today_total_05.png" alt="refuse" id="today_total_05" />
+				<p id="me_text_dis">0</p>
+				<img src="image/today_total_06.png" alt="refuse" id="today_total_06" />
+			</div>
+	</div>
+</div>
+<div class="ui-page" id="historyPage">
+	<div class="history-step">
+		<img src="image/top_3_history.png" alt="refuse" id="history_step_dot" />
+	</div>
+	<div class="bonus_today">
+		<img src="image/txt_bonuspoint.png" alt="refuse" id="bonus_icon" />
+	</div>
+	<div class="bonus_step">
+		<div class="me_step_val">
+			<p id="mySteps">0</p>
+		</div>
+		<div class="bonus_step_img">
+			<img src="image/txt_step.png" alt="refuse" id="txt_step" />
+		</div>
+	</div>
+	<div class="list-history">
+		<ul class="ui-listview">
+          <li class="step_1000">
+          	<img src="image/first_pic.png" alt="refuse" id="step_1000_food" />
+          	<img src="image/first_txt.png" alt="refuse" id="step_1000_txt" />
+          </li>
+          <li class="step_2000">
+          	<img src="image/second_pic.png" alt="refuse" id="step_2000_food" />
+          	<img src="image/second_txt.png" alt="refuse" id="step_2000_txt" />
+          </li>
+          <li class="step_3000">
+          	<img src="image/third_pic.png" alt="refuse" id="step_3000_food" />
+          	<img src="image/third_txt.png" alt="refuse" id="step_3000_txt" />
+          </li>
+          <li class="step_4000">
+          	<img src="image/forth_pic.png" alt="refuse" id="step_4000_food" />
+          	<img src="image/fourth_txt.png" alt="refuse" id="step_4000_txt" />
+          </li>
+          <li class="step_5000">
+          	<img src="image/fifth_pic.png" alt="refuse" id="step_5000_food" />
+          	<img src="image/fifth_txt.png" alt="refuse" id="step_5000_txt" />
+          </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="lib/tau/js/tau.min.js"></script>
+<!-- load javascript file for your application -->
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/event.js"></script>
+<script src="./js/pedometersensor.js"></script>
+<script src="./js/wristup.js"></script>
+<script src="./js/app.js"></script>
+<script src="./js/lowBatteryCheck.js"></script>
+</html>
